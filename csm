@@ -1,0 +1,19 @@
+# /etc/apache2/sites-available/csm
+<VirtualHost *:80>
+
+    # Server name
+    ServerName wh.eatin.gs
+
+    # Document root
+    DocumentRoot /var/www/csmedia/trunk/docroot
+
+	<Directory "/var/www/csmedia/trunk/docroot">
+		allow from all
+		Options +Indexes
+	</Directory>
+
+    # Custom log file locations
+    ErrorLog  /var/www/csmedia/logs/error.log
+    CustomLog /var/www/csmedia/logs/access.log combined
+
+</VirtualHost>

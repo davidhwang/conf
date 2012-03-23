@@ -1,0 +1,19 @@
+# /etc/apache2/sites-available/dev
+<VirtualHost *:80>
+
+    # Server name
+    ServerName dev.eatin.gs
+
+    # Document root
+    DocumentRoot /var/www/dev.eatin.gs/html/drupal7
+
+	<Directory "/var/www/dev.eatin.gs/html/drupal7">
+		allow from all
+		Options +Indexes
+	</Directory>
+
+    # Custom log file locations
+    ErrorLog  /var/www/dev.eatin.gs/logs/error.log
+    CustomLog /var/www/dev.eatin.gs/logs/access.log combined
+
+</VirtualHost>

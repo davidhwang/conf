@@ -1,0 +1,19 @@
+# /etc/apache2/sites-available/meat
+<VirtualHost *:80>
+
+    # Server name
+    ServerName m.eatin.gs
+
+    # Document root
+    DocumentRoot /var/www/m.eatin.gs/html/
+
+	<Directory "/var/www/m.eatin.gs/html">
+		allow from all
+		Options +Indexes
+	</Directory>
+
+    # Custom log file locations
+    ErrorLog  /var/www/m.eatin.gs/logs/error.log
+    CustomLog /var/www/m.eatin.gs/logs/access.log combined
+
+</VirtualHost>
